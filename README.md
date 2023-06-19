@@ -1,5 +1,5 @@
 # api-server
 
-**[Deployed URL]()**
+**[Deployed URL](https://api-server-wsgq.onrender.com)**
 
-**[Pull request]()**
+**[Pull request](https://github.com/ramaalmomani1/api-server/pulls)**
