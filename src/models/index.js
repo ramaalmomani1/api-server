@@ -25,33 +25,16 @@ const books = require('./books')
 const authors = require('./authors')
 const Collection = require("./collection");
 
-const foodModel = food(sequelize, DataTypes)
-const clothesModel = clothes(sequelize, DataTypes)
-const booksModel = books(sequelize, DataTypes)
-const authorsModel = authors(sequelize, DataTypes)
+
+  module.exports = {
+   db: sequelize,
+   Clothes: clothes(sequelize,DataTypes),
+   Food: food(sequelize,DataTypes)
+  }
 
 
-
-// sourceKey -> PK
-authorsModel.hasMany(booksModel, {foreignKey: 'authorsId', sourceKey: 'id'});
-
-// targetKey -> the target model PK
-booksModel.belongsTo(authorsModel, {foreignKey: 'authorsId', targetKey: 'id'})
-
-
-const foodCollection = new Collection(foodModel)
-const clothesCollection = new Collection(clothesModel)
-const booksCollection = new Collection(booksModel)
-const authorsCollection = new Collection(authorsModel)
-
-
-
-module.exports = {
-  db: sequelize,
-  Clothes: clothes(sequelize, DataTypes),
-  Food: food(sequelize, DataTypes),
-  foodCollection,
-  clothesCollection,
-  booksCollection,
-  authorsCollection
-}
+  /*
+  This code connects to a database and defines two models, Clothes and Food. 
+  The Clothes model represents a table in the database that stores information about clothes, and the Food model represents a table in the database that stores information about food. 
+  The code exports the db variable, which is a reference to the Sequelize instance, as well as the Clothes and Food models.
+  */

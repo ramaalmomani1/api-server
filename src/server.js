@@ -40,3 +40,12 @@ module.exports = {
     start,
     app
 }
+
+
+/* 
+The code sets up an Express server with CORS enabled and JSON parsing middleware. 
+It imports two router modules for handling food and clothes routes. 
+It includes a basic route for the home page. 
+The start function starts the server on a specified port. 
+The app object is exported for external use. 
+Additional implementation is required for error handling, route logic, and database integration.*/
