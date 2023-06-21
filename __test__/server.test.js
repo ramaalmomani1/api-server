@@ -1,11 +1,11 @@
-'use strict';
+'use strict'; 
 
-require('dotenv').config();
-const { app } = require('../src/server');
-const supertest = require('supertest');
+require('dotenv').config(); 
+const { app } = require('../src/server'); 
+const supertest = require('supertest'); 
 const mockServer = supertest(app);
 
-const { db } = require('../src/models/index');
+const { db } = require('../src/models/index');// d
 
 beforeAll(async () => {
       await db.sync();
@@ -88,3 +88,18 @@ it('Read one clothes record using id ', async () => {
     expect(res.status).toBe(204);
   })
 })
+
+
+/*
+The code defines a server that exposes two endpoints: /food and /clothes. 
+The /food endpoint allows to create, read, update, and delete food records. 
+The /clothes endpoint allows to create, read, update, and delete clothes records.
+It uses the supertest library to make requests to the server and test the endpoints. 
+beforeAll hook ensures that the database is synchronized before the tests are run.
+afterAll hook ensures that the database is dropped after the tests are run.
+each block define a test case. 
+The expect function is used to assert the expected behavior of the server.
+block that defines the Add new food record test case asserts that the server returns a status code of 201 (Created) when a new food record is created. 
+The expect function also asserts that the flavour property of the created food record is equal to the value that was passed in the request body.
+The other blocks define similar test cases for the /clothes endpoint.
+*/

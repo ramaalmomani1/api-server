@@ -48,3 +48,19 @@ async function deleteFoodRecord(req,res){
 
 
 module.exports = router;
+
+/* 
+
+Sure, here is the code in a simpler paragraph:
+
+This code is a REST API that helps manage food records. It can create, read, update, and delete food records. It uses Express.js and Sequelize to handle HTTP requests and interact with a database.
+
+To create a new food record, send a request with the food's information.
+
+To read all food records,  send a request to the API.
+
+To read a specific food record,  send a request with the food's ID. 
+
+To update a specific food record,  send a request with the food's ID and the changes wanted. 
+
+To delete a specific food record,  send a request with the food's ID. */

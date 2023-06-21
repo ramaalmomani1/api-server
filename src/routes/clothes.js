@@ -48,3 +48,11 @@ async function deleteClothesRecord(req,res){
 
 
 module.exports = router;
+
+/* 
+The provided code is an Express router module that defines several routes for CRUD operations on a "Clothes" model. 
+The routes include creating a new clothes instance, retrieving all clothes records, retrieving a specific clothes record by ID, updating a clothes record, and deleting a clothes record.
+ Each route handler function is asynchronous and utilizes Sequelize ORM methods to interact with the database.
+ The code follows RESTful API conventions and sends appropriate JSON responses with corresponding HTTP status codes. 
+It is important to ensure that the necessary modules are imported correctly and that the "Clothes" model is properly defined for the code to work as intended.
+*/
