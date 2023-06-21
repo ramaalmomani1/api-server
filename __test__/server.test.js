@@ -8,7 +8,7 @@ const mockServer = supertest(app);
 const { db } = require('../src/models/index');// d
 
 beforeAll(async () => {
-      await db.sync();
+  await db.sync();
 })
 
 afterAll(async () => {
@@ -16,26 +16,26 @@ afterAll(async () => {
 })
 
 describe('Server test', () => {
-    it(' Not found pages', async () => {
-        const res = await mockServer.get('/ttyy');
-        expect(res.status).toEqual(404);
-      })
-  
-      it(' Not found pages', async () => {
-        const res = await mockServer.put('/ttyy');
-        expect(res.status).toEqual(404);
-      })
+  it(' Not found pages', async () => {
+    const res = await mockServer.get('/ttyy');
+    expect(res.status).toEqual(404);
+  })
+
+  it(' Not found pages', async () => {
+    const res = await mockServer.put('/ttyy');
+    expect(res.status).toEqual(404);
+  })
 
   it('Add new food record', async () => {
     const res = await mockServer.post('/food').send({
-     flavour: 'Sweet',
-     color: 'Yalllow'
+      flavour: 'Sweet',
+      color: 'Yalllow'
     });
     const createdFood = JSON.parse(res.text);
     expect(res.status).toBe(201);
     expect(createdFood.flavour).toEqual('Sweet')
   });
-  
+
   it('all food records ', async () => {
     const res = await mockServer.get('/food');
     expect(res.status).toBe(200);
@@ -57,24 +57,25 @@ describe('Server test', () => {
   })
 
   /////////////////
+
   it('Add new clothes record', async () => {
     const res = await mockServer.post('/clothes').send({
-        color: 'Black',
-        size: 'medium',
-        FabricName: 'cotton',
-        stretchability: 'Medium'
+      color: 'Black',
+      size: 'medium',
+      FabricName: 'cotton',
+      stretchability: 'Medium'
     });
     const createdClothes = JSON.parse(res.text);
     expect(res.status).toBe(201);
     expect(createdClothes.FabricName).toEqual('cotton')
   });
-  
+
   it('all clothes records ', async () => {
     const res = await mockServer.get('/clothes');
     expect(res.status).toBe(200);
   })
 
-it('Read one clothes record using id ', async () => {
+  it('Read one clothes record using id ', async () => {
     const res = await mockServer.get('/clothes/1');
     expect(res.status).toBe(200);
   })
@@ -103,3 +104,4 @@ block that defines the Add new food record test case asserts that the server ret
 The expect function also asserts that the flavour property of the created food record is equal to the value that was passed in the request body.
 The other blocks define similar test cases for the /clothes endpoint.
 */
+
